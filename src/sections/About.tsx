@@ -123,7 +123,7 @@ export default function About() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/60 via-transparent to-transparent" />
             </div>
 
-            <div className="glass absolute -bottom-6 -right-6 rounded-2xl p-6 lg:bottom-8 lg:-right-8">
+            <div className="glass absolute -bottom-6 -right-6 rounded-2xl p-6 lg:bottom-8 lg:-right-8 backdrop-blur-xl">
               <div className="text-4xl font-bold text-[#FFFFFF]">4+</div>
               <div className="text-sm text-white/60">Years Experience</div>
             </div>

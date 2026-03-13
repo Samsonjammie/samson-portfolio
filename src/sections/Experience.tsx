@@ -144,7 +144,7 @@ export default function Experience() {
                 <div
                   className={`${index % 2 === 0 ? "lg:pr-16 lg:text-right" : "lg:col-start-2 lg:pl-16"}`}
                 >
-                  <div className="glass group rounded-3xl p-6 transition-all duration-500 hover:border-[#9E83FF]/30 lg:p-8">
+                  <div className="glass group rounded-3xl p-6 backdrop-blur-xl transition-all duration-500 hover:border-[#9E83FF]/30 lg:p-8">
                     <div
                       className={`mb-4 flex items-start gap-4 ${index % 2 === 0 ? "lg:flex-row-reverse" : ""}`}
                     >

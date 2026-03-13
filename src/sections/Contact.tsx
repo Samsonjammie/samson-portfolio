@@ -197,7 +197,7 @@ export default function Contact() {
           <form
             ref={formRef}
             onSubmit={handleSubmit}
-            className="glass rounded-3xl p-8 lg:p-10"
+            className="glass rounded-3xl p-8 lg:p-10 backdrop-blur-xl"
           >
             <div className="space-y-6">
               <div>
@@ -300,7 +300,7 @@ export default function Contact() {
           </form>
 
           <div ref={linksRef} className="space-y-6">
-            <div className="glass rounded-3xl p-8">
+            <div className="glass rounded-3xl p-8 backdrop-blur-xl">
               <h3 className="mb-6 font-semibold text-white">Direct Contact</h3>
 
               <div className="space-y-4">
@@ -331,7 +331,7 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="glass rounded-3xl p-8">
+            <div className="glass rounded-3xl p-8 backdrop-blur-xl">
               <h3 className="mb-4 font-semibold text-white">Download Resume</h3>
               <p className="mb-6 text-sm text-white/50">
                 Get a detailed overview of my experience, capabilities, and
@@ -347,7 +347,7 @@ export default function Contact() {
               </a>
             </div>
 
-            <div className="glass rounded-3xl border-[#9E83FF]/20 p-8">
+            <div className="glass rounded-3xl border-[#9E83FF]/20 p-8 backdrop-blur-xl">
               <div className="mb-3 flex items-center gap-3">
                 <span className="h-3 w-3 animate-pulse rounded-full bg-[#9E83FF]" />
                 <span className="text-sm font-medium text-[#9E83FF]">

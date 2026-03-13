@@ -41,7 +41,7 @@ export default function Navigation() {
             : "pointer-events-none -translate-y-4 opacity-0"
         }`}
       >
-        <div className="glass flex items-center gap-1 rounded-full px-2 py-2">
+        <div className="glass flex items-center gap-1 rounded-full px-2 py-2 backdrop-blur-xl">
           {navLinks.map((link) => (
             <button
               key={link.href}
@@ -62,7 +62,7 @@ export default function Navigation() {
 
       <button
         onClick={() => setIsMobileMenuOpen((open) => !open)}
-        className={`glass fixed right-6 top-6 z-50 rounded-full p-3 transition-all duration-300 md:hidden ${
+        className={`glass fixed right-6 top-6 z-50 rounded-full p-3 backdrop-blur-xl transition-all duration-300 md:hidden ${
           isScrolled ? "opacity-100" : "pointer-events-none opacity-0"
         }`}
         aria-label="Toggle navigation menu"
