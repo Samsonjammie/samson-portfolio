@@ -73,7 +73,7 @@ export default function Projects({ projects, onProjectClick }: ProjectsProps) {
     <section
       ref={sectionRef}
       id="projects"
-      className="relative min-h-screen w-full bg-[#050505] py-24 lg:py-32"
+      className="relative min-h-screen w-full bg-[#050505] py-16 lg:py-20"
     >
       <div ref={titleRef} className="mx-auto mb-16 max-w-7xl px-6">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
@@ -99,9 +99,8 @@ export default function Projects({ projects, onProjectClick }: ProjectsProps) {
           {projects.map((project, index) => (
             <div
               key={project.id}
-              className={`project-card group relative cursor-pointer ${
-                index === 0 || index === 3 ? "md:col-span-2 lg:col-span-2" : ""
-              }`}
+              className={`project-card group relative cursor-pointer ${index === 0 || index === 3 ? "md:col-span-2 lg:col-span-2" : ""
+                }`}
               onClick={() => onProjectClick(project)}
               data-cursor-hover
             >

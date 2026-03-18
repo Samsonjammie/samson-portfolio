@@ -116,7 +116,7 @@ export default function Experience() {
     <section
       ref={sectionRef}
       id="experience"
-      className="relative min-h-screen w-full overflow-hidden bg-[#050505] py-24 lg:py-32"
+      className="relative min-h-screen w-full overflow-hidden bg-[#050505] py-16 lg:py-20"
     >
       <div className="pointer-events-none absolute right-0 top-0 h-[600px] w-[600px] rounded-full bg-[#9E83FF]/5 blur-3xl" />
 
@@ -137,9 +137,8 @@ export default function Experience() {
             {experiences.map((experience, index) => (
               <div
                 key={experience.id}
-                className={`timeline-item relative lg:grid lg:grid-cols-2 lg:gap-16 ${
-                  index !== experiences.length - 1 ? "lg:pb-16" : ""
-                }`}
+                className={`timeline-item relative lg:grid lg:grid-cols-2 lg:gap-16 ${index !== experiences.length - 1 ? "lg:pb-16" : ""
+                  }`}
               >
                 <div
                   className={`${index % 2 === 0 ? "lg:pr-16 lg:text-right" : "lg:col-start-2 lg:pl-16"}`}

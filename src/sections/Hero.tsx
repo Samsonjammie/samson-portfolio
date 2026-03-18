@@ -121,7 +121,7 @@ export default function Hero() {
     <section
       ref={sectionRef}
       id="hero"
-      className="relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-[#050505]"
+      className="relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-[#050505] pt-20 lg:pt-24"
     >
       <div className="absolute inset-0 bg-gradient-radial from-white/[0.02] via-transparent to-transparent" />
 

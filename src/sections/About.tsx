@@ -107,7 +107,7 @@ export default function About() {
     <section
       ref={sectionRef}
       id="about"
-      className="relative min-h-screen w-full overflow-hidden bg-[#050505] py-24 lg:py-32"
+      className="relative min-h-screen w-full overflow-hidden bg-[#050505] py-16 lg:py-20"
     >
       <div className="pointer-events-none absolute left-1/2 top-1/2 h-[800px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#8B6EF4]/5 blur-3xl" />
 

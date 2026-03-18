@@ -100,7 +100,7 @@ export default function Tools() {
     <section
       ref={sectionRef}
       id="tools"
-      className="relative min-h-screen w-full overflow-hidden bg-[#050505] py-24 lg:py-32"
+      className="relative min-h-screen w-full overflow-hidden bg-[#050505] py-16 lg:py-20"
     >
       <div className="absolute inset-0">
         <div className="absolute left-1/4 top-1/4 h-96 w-96 rounded-full bg-[#7D69C5]/5 blur-3xl" />
@@ -125,11 +125,10 @@ export default function Tools() {
           {categories.map((category) => (
             <button
               key={category}
-              className={`rounded-full px-5 py-2 text-sm transition-all duration-300 ${
-                category === "All"
+              className={`rounded-full px-5 py-2 text-sm transition-all duration-300 ${category === "All"
                   ? "bg-[#7D69C5] font-medium text-black"
                   : "bg-white/5 text-white/60 hover:bg-white/10 hover:text-white"
-              }`}
+                }`}
             >
               {category}
             </button>

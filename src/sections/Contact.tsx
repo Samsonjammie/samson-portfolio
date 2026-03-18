@@ -172,7 +172,7 @@ export default function Contact() {
     <section
       ref={sectionRef}
       id="contact"
-      className="relative min-h-screen w-full overflow-hidden bg-[#050505] py-24 lg:py-32"
+      className="relative min-h-screen w-full overflow-hidden bg-[#050505] py-16 lg:py-20"
     >
       <div className="absolute inset-0">
         <div className="absolute bottom-0 left-0 h-[600px] w-[600px] rounded-full bg-[#9E83FF]/5 blur-3xl" />
@@ -215,7 +215,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-white/30 transition-colors duration-300 focus:border-[#9E83FF]/50 focus:outline-none"
-                  placeholder="Mahatma Gandhi"
+                  placeholder="John Cena"
                 />
               </div>
 
@@ -234,7 +234,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-white/30 transition-colors duration-300 focus:border-[#9E83FF]/50 focus:outline-none"
-                  placeholder="mahatmagandhi@example.com"
+                  placeholder="johncena@example.com"
                 />
               </div>
 
@@ -264,11 +264,10 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className={`flex w-full items-center justify-center gap-2 rounded-xl py-4 font-medium transition-all duration-300 ${
-                  submitted
+                className={`flex w-full items-center justify-center gap-2 rounded-xl py-4 font-medium transition-all duration-300 ${submitted
                     ? "bg-green-500 text-white"
                     : "bg-[#9E83FF] text-black hover:bg-[#8A6CFF] hover:text-white"
-                }`}
+                  }`}
               >
                 {isSubmitting ? (
                   <div className="h-5 w-5 animate-spin rounded-full border-2 border-black/30 border-t-black" />
