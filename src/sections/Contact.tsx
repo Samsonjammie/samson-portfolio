@@ -215,7 +215,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-white/30 transition-colors duration-300 focus:border-[#9E83FF]/50 focus:outline-none"
-                  placeholder="John Cena"
+                  placeholder="John berlin"
                 />
               </div>
 
@@ -234,7 +234,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-white/30 transition-colors duration-300 focus:border-[#9E83FF]/50 focus:outline-none"
-                  placeholder="johncena@example.com"
+                  placeholder="johnberlin@example.com"
                 />
               </div>
 
