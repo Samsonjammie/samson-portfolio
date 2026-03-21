@@ -117,6 +117,13 @@ export default function Hero() {
     }
   };
 
+  const scrollToContact = () => {
+    const contactSection = document.querySelector("#contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section
       ref={sectionRef}
@@ -224,10 +231,18 @@ export default function Hero() {
                     </div>
 
                     <div className="w-full space-y-2">
-                      <button className="w-full rounded-xl bg-[#9E83FF] py-3 text-sm font-medium text-black transition-colors duration-300 hover:bg-[#8A6CFF] hover:text-white">
+                      <button
+                        onClick={() => {
+                          scrollToProjects();
+                        }}
+                        className="w-full rounded-xl bg-[#9E83FF] py-3 text-sm font-medium text-black transition-colors duration-300 hover:bg-[#8A6CFF] hover:text-white">
                         View Portfolio
                       </button>
-                      <button className="w-full rounded-xl border border-white/20 py-3 text-sm text-white transition-colors duration-300 hover:border-[#9E83FF]/50 hover:bg-white/5">
+                      <button
+                        onClick={() => {
+                          scrollToContact();
+                        }}
+                        className="w-full rounded-xl border border-white/20 py-3 text-sm text-white transition-colors duration-300 hover:border-[#9E83FF]/50 hover:bg-white/5">
                         Contact Me
                       </button>
                     </div>

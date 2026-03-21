@@ -73,9 +73,9 @@ export default function Projects({ projects, onProjectClick }: ProjectsProps) {
     <section
       ref={sectionRef}
       id="projects"
-      className="relative min-h-screen w-full bg-[#050505] py-16 lg:py-20"
+      className="relative min-h-[80vh] w-full bg-[#050505] py-10 lg:py-14"
     >
-      <div ref={titleRef} className="mx-auto mb-16 max-w-7xl px-6">
+      <div ref={titleRef} className="mx-auto mb-10 max-w-7xl px-6">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div>
             <span className="mb-4 block text-sm uppercase tracking-widest text-[#9E83FF]">

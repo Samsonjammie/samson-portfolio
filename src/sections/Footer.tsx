@@ -63,7 +63,7 @@ export default function Footer() {
   return (
     <footer
       ref={footerRef}
-      className="relative w-full border-t border-white/5 bg-[#050505] py-12 lg:py-16"
+      className="relative w-full border-t border-white/5 bg-[#050505] py-8 lg:py-12"
     >
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-16 grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">

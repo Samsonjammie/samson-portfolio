@@ -172,7 +172,7 @@ export default function Contact() {
     <section
       ref={sectionRef}
       id="contact"
-      className="relative min-h-screen w-full overflow-hidden bg-[#050505] py-16 lg:py-20"
+      className="relative min-h-[80vh] w-full overflow-hidden bg-[#050505] py-10 lg:py-14"
     >
       <div className="absolute inset-0">
         <div className="absolute bottom-0 left-0 h-[600px] w-[600px] rounded-full bg-[#9E83FF]/5 blur-3xl" />
@@ -180,7 +180,7 @@ export default function Contact() {
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-6">
-        <div ref={titleRef} className="mb-16 text-center">
+        <div ref={titleRef} className="mb-10 text-center">
           <span className="mb-4 block text-sm uppercase tracking-widest text-[#9E83FF]">
             Get In Touch
           </span>

@@ -116,12 +116,12 @@ export default function Experience() {
     <section
       ref={sectionRef}
       id="experience"
-      className="relative min-h-screen w-full overflow-hidden bg-[#050505] py-16 lg:py-20"
+      className="relative min-h-[80vh] w-full overflow-hidden bg-[#050505] py-10 lg:py-14"
     >
       <div className="pointer-events-none absolute right-0 top-0 h-[600px] w-[600px] rounded-full bg-[#9E83FF]/5 blur-3xl" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6">
-        <div ref={titleRef} className="mb-20 text-center">
+        <div ref={titleRef} className="mb-12 text-center">
           <span className="mb-4 block text-sm uppercase tracking-widest text-[#9E83FF]">
             Career Journey
           </span>
