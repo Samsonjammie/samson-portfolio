@@ -8,10 +8,32 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
-export const metadata: Metadata = {
-  title: "Joseph Samson | UI/UX Designer & Graphic Artist",
-  description:
-    "Portfolio of Joseph Samson featuring UI/UX design, branding, motion, and digital product case studies.",
+export const metadata = {
+  title: "Joseph Samson | UI/UX Designer",
+  description: "Crafting meaningful digital experiences with UI/UX design, branding, and interactive interfaces.",
+
+  openGraph: {
+    title: "Joseph Samson | UI/UX Designer",
+    description: "Explore my portfolio – UI/UX, web design, branding, and creative projects.",
+    url: "https://samson-designer-portfolio.vercel.app/",
+    siteName: "Joseph Portfolio",
+    images: [
+      {
+        url: "/apple-icon.png", // IMPORTANT
+        width: 1200,
+        height: 630,
+        alt: "Joseph Samson Portfolio",
+      },
+    ],
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Joseph Samson | UI/UX Designer",
+    description: "Explore my portfolio – UI/UX, web design, branding, and creative projects.",
+    images: ["/apple-icon.png"],
+  },
 };
 
 export default function RootLayout({
