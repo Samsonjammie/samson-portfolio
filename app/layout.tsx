@@ -19,7 +19,7 @@ export const metadata = {
     siteName: "Joseph Portfolio",
     images: [
       {
-        url: "/apple-icon.png", // IMPORTANT
+        url: "https://samson-designer-portfolio.vercel.app/apple-icon2.png", // IMPORTANT
         width: 1200,
         height: 630,
         alt: "Joseph Samson Portfolio",
@@ -27,12 +27,13 @@ export const metadata = {
     ],
     type: "website",
   },
+  metadataBase: new URL("https://samson-designer-portfolio.vercel.app/"),
 
   twitter: {
     card: "summary_large_image",
     title: "Joseph Samson | UI/UX Designer",
     description: "Explore my portfolio – UI/UX, web design, branding, and creative projects.",
-    images: ["/apple-icon.png"],
+    images: ["/apple-icon2.png"],
   },
 };
 
