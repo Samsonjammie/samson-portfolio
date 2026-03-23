@@ -13,7 +13,7 @@ const experiences = [
     role: "Senior UI/UX & Graphic Designer",
     company: "Althi Solutions",
     location: "Azhgappapuram, Kanyakumari",
-    period: "2023 - Present",
+    period: "2023 - Feb 2026",
     description:
       "Leading design initiatives for client products, shaping interfaces, and building design systems for scalable digital experiences.",
     skills: ["Design Systems", "Team Leadership", "Strategy"],
