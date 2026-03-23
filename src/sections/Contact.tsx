@@ -265,8 +265,8 @@ export default function Contact() {
                 type="submit"
                 disabled={isSubmitting}
                 className={`flex w-full items-center justify-center gap-2 rounded-xl py-4 font-medium transition-all duration-300 ${submitted
-                    ? "bg-green-500 text-white"
-                    : "bg-[#9E83FF] text-black hover:bg-[#8A6CFF] hover:text-white"
+                  ? "bg-green-500 text-white"
+                  : "bg-[#9E83FF] text-black hover:bg-[#8A6CFF] hover:text-white"
                   }`}
               >
                 {isSubmitting ? (
@@ -337,7 +337,7 @@ export default function Contact() {
                 design background.
               </p>
               <a
-                href="/joseph-samson-cv.pdf"
+                href="/joseph_samson_cv.pdf"
                 download
                 className="group flex w-full items-center justify-center gap-2 rounded-xl border border-white/20 py-4 text-white transition-all duration-300 hover:border-[#9E83FF]/50 hover:bg-white/5"
               >
