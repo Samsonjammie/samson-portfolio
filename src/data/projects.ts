@@ -322,4 +322,16 @@ title: "Online Car selling Dashboard",
       { type: "image", src: "/uidesign/Frame 60.jpg" },
     ],
   },
+  {
+  id: 12,
+  title: "Logo Animation",
+  tags: ["Motion", "Branding"],
+  image: "/project-12.jpg", // your thumbnail image
+  description:
+    "A dynamic logo animation crafted to bring brand identity to life through motion design.",
+  isNew: true,
+  caseStudy: [
+    { type: "video", src: "/logo-animation/logo-animation.mp4" },
+  ],
+},
 ];

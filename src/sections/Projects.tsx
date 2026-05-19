@@ -15,7 +15,91 @@ interface ProjectsProps {
   onProjectClick: (project: Project) => void;
 }
 
-// ── Slideshow Modal (only for isSlideshow projects) ──────────────────────────
+// ── Video Modal (for video-only projects) ─────────────────────────────────────
+function VideoModal({
+  project,
+  onClose,
+}: {
+  project: Project;
+  onClose: () => void;
+}) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const videoSrc = project.caseStudy.find((s) => s.type === "video")?.src;
+
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, [onClose]);
+
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, []);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(() => {});
+    }
+  }, []);
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-md"
+      onClick={onClose}
+    >
+      <div
+        className="relative flex w-full max-w-5xl flex-col items-center px-4 py-6"
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* Close */}
+        <button
+          onClick={onClose}
+          className="absolute right-4 top-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20"
+        >
+          <X className="h-5 w-5" />
+        </button>
+
+        {/* Header */}
+        <div className="mb-5 text-center">
+          <h2 className="text-xl font-bold text-white">{project.title}</h2>
+          <p className="mt-1 text-sm text-white/50">{project.description}</p>
+        </div>
+
+        {/* Video */}
+        {videoSrc && (
+          <video
+            ref={videoRef}
+            src={videoSrc}
+            controls
+            loop
+            playsInline
+            className="w-full rounded-2xl shadow-2xl"
+            style={{ maxHeight: "75vh" }}
+          />
+        )}
+
+        {/* Tags */}
+        <div className="mt-4 flex flex-wrap justify-center gap-2">
+          {project.tags.map((tag) => (
+            <span
+              key={tag}
+              className="rounded-full bg-white/10 px-3 py-1 text-xs text-white/70"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ── Slideshow Modal (only for isSlideshow projects) ───────────────────────────
 function SlideshowModal({
   project,
   onClose,
@@ -40,7 +124,6 @@ function SlideshowModal({
     [animating, total],
   );
 
-  // Keyboard navigation
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       if (e.key === "ArrowRight") go(1);
@@ -51,10 +134,11 @@ function SlideshowModal({
     return () => window.removeEventListener("keydown", handler);
   }, [go, onClose]);
 
-  // Lock body scroll
   useEffect(() => {
     document.body.style.overflow = "hidden";
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, []);
 
   return (
@@ -66,7 +150,6 @@ function SlideshowModal({
         className="relative flex h-full w-full max-w-6xl flex-col items-center justify-center px-4 py-6"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Close */}
         <button
           onClick={onClose}
           className="absolute right-4 top-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20"
@@ -74,7 +157,6 @@ function SlideshowModal({
           <X className="h-5 w-5" />
         </button>
 
-        {/* Header */}
         <div className="mb-4 text-center">
           <h2 className="text-xl font-bold text-white">{project.title}</h2>
           <p className="mt-1 text-sm text-white/50">
@@ -82,9 +164,7 @@ function SlideshowModal({
           </p>
         </div>
 
-        {/* Slide */}
         <div className="relative flex w-full flex-1 items-center justify-center overflow-hidden">
-          {/* Left arrow */}
           <button
             onClick={() => go(-1)}
             className="absolute left-0 z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-[#9E83FF]/70 hover:scale-110 active:scale-95"
@@ -92,7 +172,6 @@ function SlideshowModal({
             <ChevronLeft className="h-6 w-6" />
           </button>
 
-          {/* Image */}
           <div
             className="mx-14 flex h-full max-h-[72vh] w-full items-center justify-center"
             style={{
@@ -108,7 +187,6 @@ function SlideshowModal({
             />
           </div>
 
-          {/* Right arrow */}
           <button
             onClick={() => go(1)}
             className="absolute right-0 z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-[#9E83FF]/70 hover:scale-110 active:scale-95"
@@ -117,7 +195,6 @@ function SlideshowModal({
           </button>
         </div>
 
-        {/* Dot indicators */}
         <div className="mt-5 flex flex-wrap justify-center gap-1.5">
           {images.map((_, i) => (
             <button
@@ -126,7 +203,8 @@ function SlideshowModal({
               className="h-1.5 rounded-full transition-all duration-300"
               style={{
                 width: i === current ? "24px" : "6px",
-                background: i === current ? "#9E83FF" : "rgba(255,255,255,0.25)",
+                background:
+                  i === current ? "#9E83FF" : "rgba(255,255,255,0.25)",
               }}
             />
           ))}
@@ -142,12 +220,12 @@ export default function Projects({ projects, onProjectClick }: ProjectsProps) {
   const titleRef = useRef<HTMLDivElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
   const [slideshowProject, setSlideshowProject] = useState<Project | null>(null);
+  const [videoProject, setVideoProject] = useState<Project | null>(null);
 
   useEffect(() => {
     const section = sectionRef.current;
     const title = titleRef.current;
     const grid = gridRef.current;
-
     if (!section || !title || !grid) return;
 
     const ctx = gsap.context(() => {
@@ -195,6 +273,12 @@ export default function Projects({ projects, onProjectClick }: ProjectsProps) {
   const handleCardClick = (project: Project) => {
     if (project.isSlideshow) {
       setSlideshowProject(project);
+    } else if (
+      project.caseStudy.length === 1 &&
+      project.caseStudy[0].type === "video"
+    ) {
+      // Single video project → open VideoModal
+      setVideoProject(project);
     } else {
       onProjectClick(project);
     }
@@ -220,8 +304,8 @@ export default function Projects({ projects, onProjectClick }: ProjectsProps) {
               </h2>
             </div>
             <p className="max-w-md text-sm text-white/50 lg:text-right">
-              A curated collection of my best work across UI/UX design, branding,
-              and digital experiences.
+              A curated collection of my best work across UI/UX design,
+              branding, and digital experiences.
             </p>
           </div>
         </div>
@@ -249,7 +333,23 @@ export default function Projects({ projects, onProjectClick }: ProjectsProps) {
                     <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent opacity-60" />
                     <div className="absolute inset-0 bg-[#9E83FF]/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
-                    {/* ── Glowing NEW badge (only for isNew projects) ── */}
+                    {/* Play icon overlay for video projects */}
+                    {project.caseStudy.length === 1 &&
+                      project.caseStudy[0].type === "video" && (
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <div className="flex h-16 w-16 items-center justify-center rounded-full bg-black/40 backdrop-blur-sm transition-all duration-300 group-hover:bg-[#9E83FF]/80 group-hover:scale-110">
+                            <svg
+                              className="h-7 w-7 translate-x-0.5 text-white"
+                              fill="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path d="M8 5v14l11-7z" />
+                            </svg>
+                          </div>
+                        </div>
+                      )}
+
+                    {/* NEW badge */}
                     {project.isNew && (
                       <div className="absolute left-4 top-4 z-10">
                         <span
@@ -261,7 +361,6 @@ export default function Projects({ projects, onProjectClick }: ProjectsProps) {
                               "0 0 12px 3px rgba(158,131,255,0.6), 0 0 30px 6px rgba(158,131,255,0.25)",
                           }}
                         >
-                          {/* Animated glow ring */}
                           <span
                             className="absolute inset-0 rounded-full"
                             style={{
@@ -271,7 +370,6 @@ export default function Projects({ projects, onProjectClick }: ProjectsProps) {
                               opacity: 0.5,
                             }}
                           />
-                          {/* Dot */}
                           <span
                             className="relative h-1.5 w-1.5 rounded-full bg-white"
                             style={{
@@ -330,7 +428,14 @@ export default function Projects({ projects, onProjectClick }: ProjectsProps) {
         />
       )}
 
-      {/* Badge animation keyframes */}
+      {/* Video modal */}
+      {videoProject && (
+        <VideoModal
+          project={videoProject}
+          onClose={() => setVideoProject(null)}
+        />
+      )}
+
       <style>{`
         @keyframes badgePulse {
           0%, 100% { transform: scale(1); opacity: 0.5; }
