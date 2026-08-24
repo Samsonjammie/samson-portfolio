@@ -8,8 +8,18 @@ import { useEffect, useRef } from "react";
 gsap.registerPlugin(ScrollTrigger);
 
 const experiences = [
-  {
+   {
     id: 1,
+    role: "Assistant Manager",
+    company: "Storytelling",
+    location: "Gurgaon, Haryana",
+    period: "June 2026 - Present",
+    description:
+      "Creating engaging digital experiences through social media creatives, motion graphics, video editing, and brand-focused visual communication.",
+    skills: ["Design Systems", "Team Leadership", "Motion Graphics"],
+  },
+  {
+    id: 2,
     role: "Senior UI/UX & Graphic Designer",
     company: "Althi Solutions",
     location: "Azhgappapuram, Kanyakumari",
@@ -19,7 +29,7 @@ const experiences = [
     skills: ["Design Systems", "Team Leadership", "Strategy"],
   },
   {
-    id: 2,
+    id: 3,
     role: "Freelance Graphic Designer",
     company: "Athanas Creative Studio",
     location: "Panagudi, Tirunelveli",
@@ -29,7 +39,7 @@ const experiences = [
     skills: ["Branding", "Print Design", "Motion Graphics"],
   },
   {
-    id: 3,
+    id: 4,
     role: "UI/UX Design Intern",
     company: "Instamedz",
     location: "Indore, Madhya Pradesh",
